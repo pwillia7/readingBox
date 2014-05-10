@@ -1,0 +1,67 @@
+.SRactive{
+	color: red !important;
+}
+.SRinactive{
+	background: #F5F5F5;
+	border: 1px solid #a9a9a9;
+	border-radius: 5px;
+	padding: 10px 45px;
+  position: relative;
+  float: left;
+}/*
+.SRinactive:after, .SRinactive:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.SRinactive:after {
+	border-color: rgba(245, 245, 245, 0);
+	border-top-color: #F5F5F5;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.SRinactive:before {
+	border-color: rgba(169, 169, 169, 0);
+	border-top-color: #a9a9a9;
+	border-width: 11px;
+	margin-left: -11px;
+}*/
+
+.SRwrap{
+	color: #2e2e2e;
+}
+#RBMain{
+	position: relative;
+	float: left;
+}
+#RBWrap {
+	position: fixed;
+	top: 0px; 
+	left: 0px;
+	z-index: 333333;
+	font-size: 24px;
+	margin-top: 25px;
+	
+}
+.SRinactive.unpause:after,.SRinactive.unpause:before{
+  display: none;
+}
+#RBMenu{
+	float: left;
+	clear: left;
+	font-size: 12px;
+	width: 200px;
+	display: none;
+}
+.wpm{
+	width: 35px;
+}
+.wpmWrap{
+	float: left;
+}
