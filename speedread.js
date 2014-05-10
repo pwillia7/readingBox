@@ -1,4 +1,7 @@
 
+var x = true;
+
+while(x){
 // add Jquery and JqueryUI
 script = document.createElement( 'script' );
 script2 = document.createElement('script');
@@ -6,7 +9,9 @@ script2.src= 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min
 script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'; 
 document.body.appendChild(script);
 document.body.appendChild(script2);
-setTimeout(startReadingBox(),1000);
+x = false;
+}
+startReadingBox();
 
 function startReadingBox(){
 
