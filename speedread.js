@@ -1,10 +1,11 @@
-//Make Readability API sense article and populate words variable
+//jqueryUI drag isn't working consistently
+
 //startReadingBox is running before jquery is fully loaded or something... need to time that better
 
 // add Jquery and JqueryUI
 script = document.createElement( 'script' );
 script2 = document.createElement('script');
-script2.src= 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js'
+script2.src= 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js';
 script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'; 
 document.body.appendChild(script);
 document.body.appendChild(script2);
