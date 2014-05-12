@@ -161,7 +161,6 @@ function speedRead1() {
       document.getElementsByClassName('SRactive')[0].className = '';
   }
     limit = words.length;
-    var readingBox;
     var halflength = words[i].length/2;
     var currentWord = 
       // start html wrap
@@ -197,7 +196,7 @@ function speedRead1() {
     // run RB
 
     if (i < limit && (!pause)){
-       readingBox = setTimeout(speedRead1,speedValue);
+       var readingBox = setTimeout(speedRead1,speedValue);
     }
     else{
         clearTimeout(readingBox);
@@ -206,4 +205,4 @@ function speedRead1() {
 
 speedRead();
 }
-setTimeout(startReadingBox(),1000);
+
