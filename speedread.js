@@ -130,7 +130,7 @@ function grabArticle() {
 
   
   
-  return topDiv.textContent.split(' ');
+  return topDiv.innerText.split(' ');
 }
 
 // Get the inner text of a node - cross browser compatibly.
@@ -206,3 +206,4 @@ function speedRead1() {
 speedRead();
 }
 
+setTimeout(startReadingBox(),2000);
