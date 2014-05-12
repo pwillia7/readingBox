@@ -206,3 +206,4 @@ function speedRead1() {
 
 speedRead();
 }
+setTimeout(startReadingBox(),1000);
