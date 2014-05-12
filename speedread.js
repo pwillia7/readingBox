@@ -6,7 +6,8 @@
 script = document.createElement( 'script' );
 script2 = document.createElement('script');
 script2.src= 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js';
-script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'; 
+script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
+script2.onload = startReadingBox();
 document.body.appendChild(script);
 document.body.appendChild(script2);
 
@@ -206,4 +207,3 @@ function speedRead1() {
 speedRead();
 }
 
-setTimeout(startReadingBox(),2000);
