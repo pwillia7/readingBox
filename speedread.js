@@ -57,17 +57,17 @@ function speedRead(){
       speedValue = 60000/$(this).val(); // get the current value of the input field.
   });
 
-  function findLongestWord(words) {
-    var lw = 'a';
-    for(var i = 0; i < words.length; i++) {
-      if(words[i].length > lw.length){
-        lw = words[i];
-      }
-    }
-    if(lw.length > 10){
-      document.getElementsByClassName('SRinactive')[0].style.minWidth = document.getElementsByClassName('SRinactive')[0].style.minWidth + lw.length * 2;
-    }
-  }
+  // function findLongestWord(words) {
+  //   var lw = 'a';
+  //   for(var i = 0; i < words.length; i++) {
+  //     if(words[i].length > lw.length){
+  //       lw = words[i];
+  //     }
+  //   }
+  //   if(lw.length > 10){
+  //     document.getElementsByClassName('SRinactive')[0].style.minWidth = document.getElementsByClassName('SRinactive')[0].style.minWidth + lw.length * 2;
+  //   }
+  // }
 
   //start readability alg--
   function grabArticle() {
@@ -153,7 +153,7 @@ function speedRead(){
 
   words = grabArticle();
 
-  findLongestWord(words);
+  // findLongestWord(words);
   
   speedRead1();
 }
