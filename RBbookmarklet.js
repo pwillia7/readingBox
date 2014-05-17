@@ -1,0 +1,1 @@
+javascript:(function(){var head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://www.ptkwilliams.com/readingBox/readingBox.js?' + Math.floor(Math.random()*99999);head.appendChild(script);})(); void 0
