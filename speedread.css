@@ -8,33 +8,11 @@
 	padding: 10px 45px;
   position: relative;
   float: left;
-}/*
-.SRinactive:after, .SRinactive:before {
-	top: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
 }
-
-.SRinactive:after {
-	border-color: rgba(245, 245, 245, 0);
-	border-top-color: #F5F5F5;
-	border-width: 10px;
-	margin-left: -10px;
-}
-.SRinactive:before {
-	border-color: rgba(169, 169, 169, 0);
-	border-top-color: #a9a9a9;
-	border-width: 11px;
-	margin-left: -11px;
-}*/
 
 .SRwrap{
 	color: #2e2e2e;
+	font-family: 'Open Sans', sans-serif;
 }
 #RBMain{
 	position: relative;
