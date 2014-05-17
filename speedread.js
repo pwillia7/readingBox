@@ -57,91 +57,103 @@ function speedRead(){
       speedValue = 60000/$(this).val(); // get the current value of the input field.
   });
 
+  function findLongestWord(words) {
+    var lw = 'a';
+    for(var i = 0; i < words.length; i++) {
+      if(words[i].length > lw.length){
+        lw = words[i];
+      }
+    }
+    if(lw.length > 10){
+      document.getElementsByClassName('SRinactive')[0].style.minWidth = document.getElementsByClassName('SRinactive')[0].style.minWidth + lw.length * 2;
+    }
+  }
 
+  //start readability alg--
+  function grabArticle() {
+    var allParagraphs = document.getElementsByTagName("p");
+    var topDivCount = 0;
+    var topDiv = null;
+    var topDivParas;
+    
+    var articleContent = document.createElement("DIV");
+    var articleTitle = document.createElement("H1");
+    var articleFooter = document.createElement("DIV");
+    
+    // Replace all doubled-up <BR> tags with <P> tags, and remove fonts.
+    var pattern =  new RegExp ("<br/?>[ \r\n\s]*<br/?>", "g");
+    
+    
+    // Grab the title from the <title> tag and inject it as the title.
+    articleTitle.innerHTML = document.title;
+    
+    // Study all the paragraphs and find the chunk that has the best score.
+    // A score is determined by things like: Number of <p>'s, commas, special classes, etc.
+    for (var j=0; j < allParagraphs.length; j++) {
+      parentNode = allParagraphs[j].parentNode;
 
-//start readability alg--
-function grabArticle() {
-  var allParagraphs = document.getElementsByTagName("p");
-  var topDivCount = 0;
-  var topDiv = null;
-  var topDivParas;
-  
-  var articleContent = document.createElement("DIV");
-  var articleTitle = document.createElement("H1");
-  var articleFooter = document.createElement("DIV");
-  
-  // Replace all doubled-up <BR> tags with <P> tags, and remove fonts.
-  var pattern =  new RegExp ("<br/?>[ \r\n\s]*<br/?>", "g");
-  
-  
-  // Grab the title from the <title> tag and inject it as the title.
-  articleTitle.innerHTML = document.title;
-  
-  // Study all the paragraphs and find the chunk that has the best score.
-  // A score is determined by things like: Number of <p>'s, commas, special classes, etc.
-  for (var j=0; j < allParagraphs.length; j++) {
-    parentNode = allParagraphs[j].parentNode;
+      // Initialize readability data
+      if(typeof parentNode.readability == 'undefined')
+      {
+        parentNode.readability = {"contentScore": 0};     
 
-    // Initialize readability data
-    if(typeof parentNode.readability == 'undefined')
-    {
-      parentNode.readability = {"contentScore": 0};     
+        // Look for a special classname
+        if(parentNode.className.match(/(comment|meta|footer|footnote)/))
+          parentNode.readability.contentScore -= 50;
+        else if(parentNode.className.match(/((^|\\s)(post|hentry|entry[-]?(content|text|body)?|article[-]?(content|text|body)?)(\\s|$))/))
+          parentNode.readability.contentScore += 25;
 
-      // Look for a special classname
-      if(parentNode.className.match(/(comment|meta|footer|footnote)/))
-        parentNode.readability.contentScore -= 50;
-      else if(parentNode.className.match(/((^|\\s)(post|hentry|entry[-]?(content|text|body)?|article[-]?(content|text|body)?)(\\s|$))/))
-        parentNode.readability.contentScore += 25;
+        // Look for a special ID
+        if(parentNode.id.match(/(comment|meta|footer|footnote)/))
+          parentNode.readability.contentScore -= 50;
+        else if(parentNode.id.match(/^(post|hentry|entry[-]?(content|text|body)?|article[-]?(content|text|body)?)$/))
+          parentNode.readability.contentScore += 25;
+      }
 
-      // Look for a special ID
-      if(parentNode.id.match(/(comment|meta|footer|footnote)/))
-        parentNode.readability.contentScore -= 50;
-      else if(parentNode.id.match(/^(post|hentry|entry[-]?(content|text|body)?|article[-]?(content|text|body)?)$/))
-        parentNode.readability.contentScore += 25;
+      // Add a point for the paragraph found
+      if(getInnerText(allParagraphs[j]).length > 10)
+        parentNode.readability.contentScore++;
+
+      // Add points for any commas within this paragraph
+      parentNode.readability.contentScore += getCharCount(allParagraphs[j]);
     }
 
-    // Add a point for the paragraph found
-    if(getInnerText(allParagraphs[j]).length > 10)
-      parentNode.readability.contentScore++;
+    // Assignment from index for performance. See http://www.peachpit.com/articles/article.aspx?p=31567&seqNum=5 
+    for(nodeIndex = 0; (node = document.getElementsByTagName('*')[nodeIndex]); nodeIndex++)
+      if(typeof node.readability != 'undefined' && (topDiv == null || node.readability.contentScore > topDiv.readability.contentScore))
+        topDiv = node;
 
-    // Add points for any commas within this paragraph
-    parentNode.readability.contentScore += getCharCount(allParagraphs[j]);
+    if(topDiv == null)
+    {
+      topDiv = document.createElement('div');
+      topDiv.innerHTML = 'Sorry, readability was unable to parse this page for content. If you feel like it should have been able to, please <a href="http://code.google.com/p/arc90labs-readability/issues/entry">let us know by submitting an issue.</a>';
+    }
+    
+    
+
+    
+    
+    return topDiv.innerText.split(' ');
   }
 
-  // Assignment from index for performance. See http://www.peachpit.com/articles/article.aspx?p=31567&seqNum=5 
-  for(nodeIndex = 0; (node = document.getElementsByTagName('*')[nodeIndex]); nodeIndex++)
-    if(typeof node.readability != 'undefined' && (topDiv == null || node.readability.contentScore > topDiv.readability.contentScore))
-      topDiv = node;
-
-  if(topDiv == null)
-  {
-    topDiv = document.createElement('div');
-    topDiv.innerHTML = 'Sorry, readability was unable to parse this page for content. If you feel like it should have been able to, please <a href="http://code.google.com/p/arc90labs-readability/issues/entry">let us know by submitting an issue.</a>';
+  // Get the inner text of a node - cross browser compatibly.
+  function getInnerText(e) {
+    if (navigator.appName == "Microsoft Internet Explorer")
+      return e.innerText;
+    else
+      return e.textContent;
   }
-  
-  
 
-  
-  
-  return topDiv.innerText.split(' ');
-}
+  // Get character count
+  function getCharCount ( e,s ) {
+      s = s || ",";
+    return getInnerText(e).split(s).length;
+  }
+  // end readability code
 
-// Get the inner text of a node - cross browser compatibly.
-function getInnerText(e) {
-  if (navigator.appName == "Microsoft Internet Explorer")
-    return e.innerText;
-  else
-    return e.textContent;
-}
+  words = grabArticle();
 
-// Get character count
-function getCharCount ( e,s ) {
-    s = s || ",";
-  return getInnerText(e).split(s).length;
-}
-// end readability code
-
-words = grabArticle();
+  findLongestWord(words);
   
   speedRead1();
 }
