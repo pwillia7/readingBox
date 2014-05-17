@@ -6,8 +6,10 @@
 	border: 1px solid #a9a9a9;
 	border-radius: 5px;
 	padding: 10px 45px;
-  position: relative;
-  float: left;
+  	position: relative;
+  	float: left;
+	min-width: 150px;
+	text-align: center;
 }
 
 .SRwrap{

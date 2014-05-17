@@ -1,12 +1,3 @@
-
-
-//jqueryUI drag isn't working consistently
-
-//startReadingBox is running before jquery is fully loaded or something... need to time that better
-
-// add Jquery and JqueryUI
-
-
 function startReadingBox(){
 
 
@@ -33,34 +24,38 @@ function insertHTML(htmlStr) {
     return rBFrag;
 }
 
-
+//speedRead sets up components needed for ReadingBox
 function speedRead(){
 
-  // setup ReadingBox
+  // setup ReadingBox divs
   document.body.insertBefore(insertHTML("<div id=\"RBWrap\"><div id=\"RBMain\"></div></div>"));
   document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span></span>"));
-  // document.getElementById('speedValue').innerHTML = speedValue;
-$( "#RBMain" ).draggable();
 
-$("#RBMain").hover(
-  function(){
-    document.getElementById('pausedRB').innerHTML = i;
-    pause = true;
-    clearTimeout(readingBox);
-    $(".SRinactive").removeClass('unpause');
-    $("#RBMenu").fadeIn();
-  },
-  function(){
-    pause = false;
-    speedRead1();
-    document.getElementById('pausedRB').innerHTML = "";
-    $(".SRinactive").addClass('unpause');
-    $("#RBMenu").fadeOut();
+
+  //make ReadingBox draggable
+  $( "#RBMain" ).draggable();
+
+  //pause on hover and clear timeouts queued if any -- restart readingBox on mouse out
+  $("#RBMain").hover(
+    function(){
+      document.getElementById('pausedRB').innerHTML = i;
+      pause = true;
+      clearTimeout(readingBox);
+      $(".SRinactive").removeClass('unpause');
+      $("#RBMenu").fadeIn();
+    },
+    function(){
+      pause = false;
+      speedRead1();
+      document.getElementById('pausedRB').innerHTML = "";
+      $(".SRinactive").addClass('unpause');
+      $("#RBMenu").fadeOut();
+    });
+
+    //dynamically change WPM
+    $('#wpmController').bind('input', function() { 
+      speedValue = 60000/$(this).val(); // get the current value of the input field.
   });
-
-  $('#wpmController').bind('input', function() { 
-    speedValue = 60000/$(this).val(); // get the current value of the input field.
-});
 
 
 
@@ -144,7 +139,7 @@ function getCharCount ( e,s ) {
     s = s || ",";
   return getInnerText(e).split(s).length;
 }
-
+// end readability code
 
 words = grabArticle();
   
@@ -180,25 +175,27 @@ function speedRead1() {
         "</span>" +
       // end html wrap
       "</span>" ;
+
+    // increment count -- not currently used
     count+=words[i].length+1;
 
 
 
-
+    // replace word
     $('.SRinactive').remove();
     document.getElementById('RBMain').insertBefore(insertHTML(currentWord),document.getElementById('RBMenu'));
 
+    // increment i
     i++;
 
 
-    // run RB
-
+    // run RB if not paused
     if (i < limit && (!pause)){
         readingBox = setTimeout(speedRead1,speedValue);
     }
   
 }
-
+//kick it off when startReadingBox is called
 speedRead();
 }
 
