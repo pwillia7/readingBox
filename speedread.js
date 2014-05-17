@@ -18,7 +18,7 @@ function startReadingBox(){
   var count = 0;
   var speedValue=125;
   var pause = false;
-
+  var readingBox;
 
 
 
@@ -46,6 +46,7 @@ $("#RBMain").hover(
   function(){
     document.getElementById('pausedRB').innerHTML = i;
     pause = true;
+    clearTimeout(readingBox);
     $(".SRinactive").removeClass('unpause');
     $("#RBMenu").fadeIn();
   },
@@ -191,11 +192,9 @@ function speedRead1() {
     // run RB
 
     if (i < limit && (!pause)){
-       var readingBox = setTimeout(speedRead1,speedValue);
+        readingBox = setTimeout(speedRead1,speedValue);
     }
-    else{
-        clearTimeout(readingBox);
-    }
+  
 }
 
 speedRead();
