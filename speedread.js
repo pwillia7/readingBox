@@ -162,9 +162,7 @@ function speedRead1() {
       if(document.getElementById('pausedRB').innerHTML > 0){
         i = document.getElementById('pausedRB').innerHTML;
       }
-      if(document.getElementsByClassName('SRactive').length!== 0){
-      document.getElementsByClassName('SRactive')[0].className = '';
-  }
+      
     limit = words.length;
     var halflength = words[i].length/2;
     var currentWord = 
