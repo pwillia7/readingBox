@@ -12,9 +12,10 @@
 	text-align: center;
 }
 
-.SRwrap{
+.SRwrap,.SRactive{
 	color: #2e2e2e;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 24px;
 }
 #RBMain{
 	position: relative;
@@ -25,7 +26,6 @@
 	top: 200px; 
 	left: 200px;
 	z-index: 333333;
-	font-size: 24px;
 	margin-top: 25px;
 	
 }
