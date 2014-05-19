@@ -10,6 +10,7 @@ function startReadingBox(){
   var speedValue=125;
   var pause = false;
   var readingBox;
+  var excludes = ['.',',','-','(',')','$','#','\'','"'];
 
 // whitespace trim helper function
 function trimWS (str) {
@@ -176,21 +177,29 @@ function speedRead1() {
         i = document.getElementById('pausedRB').innerHTML;
     }
     
+    //need to make middleChar var           
+    var middleChar;
 
     limit = words.length;
     var halflength = words[i].length/2;
+
+    if(excludes.indexOf(words[i].substr(halflength,1)) === -1){
+      middleChar = words[i].substr(halflength,1);
+    } else {
+      middleChar = words[i].substr(halflength-1,1)
+    }
+
+
     var currentWord = 
       // start html wrap
       "<span class=\"SRinactive unpause\">" +
-        // preceding word text
-        //words[i-1] +
         // start active word
         " <span class=\"SRwrap\">" +
           //  first half of active word
           words[i].substr(0,halflength) +
           // highlight middle letter
           "<span class=\"SRactive\">" +
-            words[i].substr(halflength,1) +
+            middleChar +
           // end middle letter
           "</span>" +
           // last half of active word
