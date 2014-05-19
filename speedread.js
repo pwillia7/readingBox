@@ -11,7 +11,17 @@ function startReadingBox(){
   var pause = false;
   var readingBox;
 
-
+// whitespace trim helper function
+function trimWS (str) {
+    str = str.replace(/^\s+/, '');
+    for (var i = str.length - 1; i >= 0; i--) {
+        if (/\S/.test(str.charAt(i))) {
+            str = str.substring(0, i + 1);
+            break;
+        }
+    }
+    return str;
+}
 
 //html string helper function
 function insertHTML(htmlStr) {
@@ -153,16 +163,20 @@ function speedRead(){
 
   words = grabArticle();
 
-  // findLongestWord(words);
+  for(var z = 0; z < words.length; z++) {
+    words[z] = trimWS(words[z]);
+  }
   
   speedRead1();
 }
 
 function speedRead1() {
-      if(document.getElementById('pausedRB').innerHTML > 0){
+      //get current i value from div if paused
+    if(document.getElementById('pausedRB').innerHTML > 0){
         i = document.getElementById('pausedRB').innerHTML;
-      }
-      
+    }
+    
+
     limit = words.length;
     var halflength = words[i].length/2;
     var currentWord = 
