@@ -179,14 +179,20 @@ function speedRead1() {
     
     //need to make middleChar var           
     var middleChar;
+    var startOfWord;
+    var endOfWord;
 
     limit = words.length;
     var halflength = words[i].length/2;
 
     if(excludes.indexOf(words[i].substr(halflength,1)) === -1){
+      startOfWord = words[i].substr(0,halflength);
       middleChar = words[i].substr(halflength,1);
+      endOfWord = words[i].substr(halflength+1,words[i].length);
     } else {
-      middleChar = words[i].substr(halflength-1,1)
+      startOfWord = words[i].substr(0,halflength-1);
+      middleChar = words[i].substr(halflength-1,1);
+      endOfWord = words[i].substr(halflength,words[i].length);
     }
 
 
@@ -196,14 +202,14 @@ function speedRead1() {
         // start active word
         " <span class=\"SRwrap\">" +
           //  first half of active word
-          words[i].substr(0,halflength) +
+          startOfWord +
           // highlight middle letter
           "<span class=\"SRactive\">" +
             middleChar +
           // end middle letter
           "</span>" +
           // last half of active word
-          words[i].substr(halflength+1,words[i].length) +
+          endOfWord +
         // end active word
         "</span>" +
       // end html wrap
