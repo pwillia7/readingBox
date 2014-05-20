@@ -2,7 +2,15 @@
 	color: red !important;
 }
 .SRinactive{
-	background: url('http://www.ptkwilliams.com/readingBox/squairy_light.png');
+	background:
+linear-gradient(27deg, #FAFAFA 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #FAFAFA 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #f2f2f2 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #f2f2f2 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #F8F8F8 10px, transparent 10px),
+linear-gradient(#f8f8f8 25%, #F8F8F8 25%, #F8F8F8 50%, transparent 50%, transparent 75%, #fbfbfb 75%, #fbfbfb);
+background-color: #ffffff;
+background-size: 16px 16px;
 	border: 1px solid #a9a9a9;
 	border-radius: 5px;
   position: relative;
@@ -11,6 +19,7 @@
 	text-align: center;
   padding-top: 25%;
   padding-bottom: 25%;
+  letter-spacing: .5px;
 }
 
 .SRwrap,.SRactive{
