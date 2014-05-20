@@ -27,7 +27,7 @@
 	left: 50%;
 	z-index: 333333;
 	margin-top: 25px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 	
 }
 .SRinactive.unpause:after,.SRinactive.unpause:before{
