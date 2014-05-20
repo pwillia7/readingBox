@@ -38,8 +38,8 @@
 	font-size: 12px;
 	display: none;
 }
-.wpm{
-
+.wpm input{
+width: 50px;
 }
 .wpmWrap{
 	float: left;
