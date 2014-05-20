@@ -2,20 +2,19 @@
 	color: red !important;
 }
 .SRinactive{
-	background: #F5F5F5;
+	background: url('http://www.ptkwilliams.com/readingBox/squairy_light.png');
 	border: 1px solid #a9a9a9;
 	border-radius: 5px;
-	padding: 10px 45px;
-  	position: relative;
-  	float: left;
+	padding: 80px 115px;
+  position: relative;
+  float: left;
 	min-width: 150px;
 	text-align: center;
 }
 
 .SRwrap,.SRactive{
 	color: #2e2e2e;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 24px;
+	font-size: 30px;
 }
 #RBMain{
 	position: relative;
@@ -23,10 +22,11 @@
 }
 #RBWrap {
 	position: fixed;
-	top: 200px; 
-	left: 200px;
+	top: 0; 
+	left: 50%;
 	z-index: 333333;
 	margin-top: 25px;
+  font-family: 'Open Sans', sans-serif;
 	
 }
 .SRinactive.unpause:after,.SRinactive.unpause:before{
@@ -47,8 +47,10 @@ width: 50px;
 .wpmLabel{
 	width: 20%;
 float: left;
-margin-top: 13px;
+margin-top: 9px;
+
 }
 #wpmController{
-	width: 80%;
+	width: 70%;
+  margin-top: 6px;
 }
