@@ -12,18 +12,6 @@ function startReadingBox(){
   var readingBox;
   var excludes = ['.',',','-','(',')','$','#','\'','"'];
 
-// whitespace trim helper function
-// TODO:::: NEED TO MAKE IT BREAK WORD AT CARRIAGE RETURN INTO NEW WORD
-function trimWS (str) {
-    str = str.replace(/^\s+/, '');
-    for (var i = str.length - 1; i >= 0; i--) {
-        if (/\S/.test(str.charAt(i))) {
-            str = str.substring(0, i + 1);
-            break;
-        }
-    }
-    return str;
-}
 
 //html string helper function
 function insertHTML(htmlStr) {
@@ -134,7 +122,7 @@ function speedRead(){
 
     
     
-    return topDiv.innerText.split(' ');
+    return topDiv.innerText.split(/[\r\n ]/).filter(function(v){return v!==''});
   }
 
   // Get the inner text of a node - cross browser compatibly.
@@ -153,10 +141,6 @@ function speedRead(){
   // end readability code
 
   words = grabArticle();
-
-  for(var z = 0; z < words.length; z++) {
-    words[z] = trimWS(words[z]);
-  }
   
   speedRead1();
 }
