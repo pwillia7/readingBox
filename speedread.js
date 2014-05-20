@@ -13,8 +13,9 @@ function startReadingBox(){
   var excludes = ['.',',','-','(',')','$','#','\'','"'];
 
 // whitespace trim helper function
+// TODO:::: NEED TO MAKE IT BREAK WORD AT CARRIAGE RETURN INTO NEW WORD
 function trimWS (str) {
-    str = str.replace(/^\s+/, ' ');
+    str = str.replace(/^\s+/, '');
     for (var i = str.length - 1; i >= 0; i--) {
         if (/\S/.test(str.charAt(i))) {
             str = str.substring(0, i + 1);
