@@ -5,11 +5,12 @@
 	background: url('http://www.ptkwilliams.com/readingBox/squairy_light.png');
 	border: 1px solid #a9a9a9;
 	border-radius: 5px;
-	padding: 80px;
   position: relative;
   float: left;
-	min-width: 250px;
+	width: 450px;
 	text-align: center;
+  padding-top: 25%;
+  padding-bottom: 25%;
 }
 
 .SRwrap,.SRactive{
