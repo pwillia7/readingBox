@@ -202,12 +202,13 @@ function speedRead1() {
 
     // increment count -- not currently used
     count+=words[i].length+1;
-document.getElementById('RBConfigurationBtn').onclick = "showMenu()";
+
 
 
     // replace word
     $('.SRinactive').remove();
     document.getElementById('RBMain').insertBefore(insertHTML(currentWord),document.getElementById('RBMenu'));
+    document.getElementById('RBConfigurationBtn').onclick = "showMenu()";
     // increment i
     i++;
 
