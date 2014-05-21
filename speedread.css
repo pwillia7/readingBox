@@ -1,7 +1,3 @@
-body{background:gray;}
-
-
-
 .SRactive{
 	color: red !important;
 }
@@ -83,4 +79,5 @@ margin-top: 3px;
   right: 20px;
   bottom: 5px;
   font-size:34px;
+  display: none;
 }

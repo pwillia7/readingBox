@@ -42,7 +42,8 @@ function speedRead(){
       pause = true;
       clearTimeout(readingBox);
       $(".SRinactive").removeClass('unpause');
-      $("#RBMenu").slideDown();
+      document.getElementById('RBConfigurationBtn').style.display = "inline";
+      
     },
     function(){
       pause = false;
@@ -50,6 +51,10 @@ function speedRead(){
       document.getElementById('pausedRB').innerHTML = "";
       $(".SRinactive").addClass('unpause');
       $("#RBMenu").slideUp();
+    });
+  
+    $('#RBConfigurationBtn').click(function(){
+      $("#RBMenu").slideDown();
     });
 
     //dynamically change WPM
