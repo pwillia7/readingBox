@@ -54,7 +54,7 @@ function speedRead(){
       $("#RBMenu").slideUp();
     });
 
-    document.getElementById('RBConfigurationBtn').onclick = "showMenu()";
+    
 
    function showMenu() {
       $("#RBMenu").slideDown();
@@ -202,7 +202,7 @@ function speedRead1() {
 
     // increment count -- not currently used
     count+=words[i].length+1;
-
+document.getElementById('RBConfigurationBtn').onclick = "showMenu()";
 
 
     // replace word
