@@ -54,7 +54,7 @@ function speedRead(){
       $("#RBMenu").slideUp();
     });
 
-    document.getElementById('RBConfigurationBtn').onclick = "showMenu()"
+ //   document.getElementById('RBConfigurationBtn').onclick = "showMenu()"
 
     $('#RBConfigurationBtn').click(function(){
       $("#RBMenu").slideDown();
