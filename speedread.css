@@ -1,8 +1,12 @@
+body{background:gray;}
+
+
+
 .SRactive{
 	color: red !important;
 }
 .SRinactive{
-	background:
+background:
 linear-gradient(27deg, #FAFAFA 5px, transparent 5px) 0 5px,
 linear-gradient(207deg, #FAFAFA 5px, transparent 5px) 10px 0px,
 linear-gradient(27deg, #f2f2f2 5px, transparent 5px) 0px 10px,
@@ -43,24 +47,31 @@ background-size: 16px 16px;
   display: none;
 }
 #RBMenu{
+  width: 449px;
+  background: #fafafa;
+  border-radius: 5px;
+  border-top-left-radius:0px;
+  border-top-right-radius: 0px;
+  margin-left:1px;
 	float: left;
 	clear: left;
 	font-size: 12px;
 	display: none;
 }
-.wpm{
-width: 50px;
-}
+
 .wpmWrap{
+  margin: 5px;
 	float: left;
+  width: 100%;
 }
 .wpmLabel{
-	width: 20%;
+	width: 10%;
 float: left;
-margin-top: 9px;
+margin-top: 7px;
 
 }
 #wpmController{
 	width: 70%;
   margin-top: 6px;
+  border: none;
 }

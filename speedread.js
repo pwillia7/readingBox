@@ -197,7 +197,6 @@ function speedRead1() {
     // replace word
     $('.SRinactive').remove();
     document.getElementById('RBMain').insertBefore(insertHTML(currentWord),document.getElementById('RBMenu'));
-    document.getElementsByClassName('wpmWrap')[0].style.width = document.getElementById('RBMain').offsetWidth.toString()+"px";
     // increment i
     i++;
 
