@@ -29,7 +29,7 @@ function speedRead(){
 
   // setup ReadingBox divs
   document.body.insertBefore(insertHTML("<div id=\"RBWrap\"><div id=\"RBMain\"></div></div>"));
-  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span></span>"));
+  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBConfigurationBtn\">&#x2699;</span><span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span></span>"));
 
 
   //make ReadingBox draggable
@@ -54,7 +54,7 @@ function speedRead(){
       $("#RBMenu").slideUp();
     });
 
-    
+     document.getElementById('RBConfigurationBtn').onclick = "showMenu()";
 
    function showMenu() {
       $("#RBMenu").slideDown();
@@ -196,7 +196,7 @@ function speedRead1() {
         // end active word
         "</span>" +
         //config button
-        "<span id=\"RBConfigurationBtn\">&#x2699;</span>" + 
+        + 
       // end html wrap
       "</span>" ;
 
@@ -208,7 +208,7 @@ function speedRead1() {
     // replace word
     $('.SRinactive').remove();
     document.getElementById('RBMain').insertBefore(insertHTML(currentWord),document.getElementById('RBMenu'));
-    document.getElementById('RBConfigurationBtn').onclick = "showMenu()";
+   
     // increment i
     i++;
 
