@@ -42,7 +42,7 @@ function speedRead(){
       pause = true;
       clearTimeout(readingBox);
       $(".SRinactive").removeClass('unpause');
-      document.getElementById('RBConfigurationBtn').style.display = "inline";
+      document.getElementById('RBConfigurationBtn').style.display = "block";
       
     },
     function(){
