@@ -50,9 +50,10 @@ function speedRead(){
       speedRead1();
       document.getElementById('pausedRB').innerHTML = "";
       $(".SRinactive").addClass('unpause');
+      document.getElementById('RBConfigurationBtn').style.display = "none";
       $("#RBMenu").slideUp();
     });
-  
+
     $('#RBConfigurationBtn').click(function(){
       $("#RBMenu").slideDown();
     });
