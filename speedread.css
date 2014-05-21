@@ -1,3 +1,6 @@
+body{background:gray;}
+
+
 
 .SRactive{
 	color: red !important;
@@ -21,6 +24,7 @@ background-size: 16px 16px;
   padding-top: 25%;
   padding-bottom: 25%;
   letter-spacing: .5px;
+
 }
 
 .SRwrap,.SRactive{
@@ -72,4 +76,11 @@ margin-top: 3px;
 	width: 70%;
   
   border: none;
-}	
+}
+
+#RBConfigurationBtn{
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  font-size:34px;
+}

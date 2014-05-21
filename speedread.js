@@ -186,6 +186,8 @@ function speedRead1() {
           endOfWord +
         // end active word
         "</span>" +
+        //config button
+        "<span id=\"RBConfigurationBtn\">&#x2699;</span>" + 
       // end html wrap
       "</span>" ;
 
