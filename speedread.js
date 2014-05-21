@@ -42,14 +42,14 @@ function speedRead(){
       pause = true;
       clearTimeout(readingBox);
       $(".SRinactive").removeClass('unpause');
-      $("#RBMenu").fadeIn();
+      $("#RBMenu").slideDown();
     },
     function(){
       pause = false;
       speedRead1();
       document.getElementById('pausedRB').innerHTML = "";
       $(".SRinactive").addClass('unpause');
-      $("#RBMenu").fadeOut();
+      $("#RBMenu").slideUp();
     });
 
     //dynamically change WPM
