@@ -81,8 +81,8 @@ font-family: Arial, Helvetica, sans-serif;
 #RBConfigurationBtn{
   z-index: 999999;
   position: relative;
-right: -420px;
-bottom: 40px;
+right: 30px;
+bottom: -240px;
   font-size:34px;
   display: inline;
   cursor: pointer;

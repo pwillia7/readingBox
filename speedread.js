@@ -51,8 +51,6 @@ function speedRead(){
       $(".SRinactive").addClass('unpause');
       document.getElementById('RBConfigurationBtn').style.display = "none";
       $("#RBMenu").slideUp();
-      $("#RBConfigurationBtn").css('right','-420px');
-      $("#RBConfigurationBtn").css('bottom','40px'); 
     });
 
  //   document.getElementById('RBConfigurationBtn').onclick = "showMenu()"
@@ -60,8 +58,6 @@ function speedRead(){
 $("#RBConfigurationBtn").click(function(){
   $("#RBMenu").slideDown("300",function(){$('#RBMenu').css('display','block');
                                          });
-  $("#RBConfigurationBtn").css('right','30px');
-  $("#RBConfigurationBtn").css('bottom','40px');
 });
     //dynamically change WPM
     $('#wpmController').bind('input', function() { 
