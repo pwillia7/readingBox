@@ -43,7 +43,6 @@ function speedRead(){
       clearTimeout(readingBox);
       $(".SRinactive").removeClass('unpause');
       document.getElementById('RBConfigurationBtn').style.display = "inline";
-      $("#RBMenu").slideDown();
     },
     function(){
       pause = false;
@@ -208,7 +207,7 @@ function speedRead1() {
 
     // replace word
     $('.SRinactive').remove();
-    document.getElementById('RBMain').insertBefore(insertHTML(currentWord),document.getElementById('RBMenu'));
+    document.getElementById('RBMain').insertBefore(insertHTML(currentWord),document.getElementById('RBConfigurationBtn'));
     // increment i
     i++;
 
