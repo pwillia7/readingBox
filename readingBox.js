@@ -20,7 +20,7 @@ window.bookmarklet = function(opts){fullFunc(opts)};
 // These are the styles, scripts and callbacks we include in our bookmarklet:
 window.bookmarklet({
  
-    css : ['http://ptkwilliams.com/readingBox/speedread.css' + Math.floor(Math.random()*99999)],
+    css : ['http://ptkwilliams.com/readingBox/speedread.css?' + Math.floor(Math.random()*99999)],
     js  : ['http://ptkwilliams.com/readingBox/speedread.js?' + Math.floor(Math.random()*99999)],   
 //	jqpath : 'myCustomjQueryPath.js', <-- option to include your own jquery
     ready : function(){
