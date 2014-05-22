@@ -29,7 +29,7 @@ function speedRead(){
 
   // setup ReadingBox divs
   document.body.insertBefore(insertHTML("<div id=\"RBWrap\"><div id=\"RBMain\"></div></div>"));
-  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span></span>"));
+  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBConfigurationBtn\">&#x2699;</span><span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span></span>"));
 
 
   //make ReadingBox draggable
@@ -42,7 +42,7 @@ function speedRead(){
       pause = true;
       clearTimeout(readingBox);
       $(".SRinactive").removeClass('unpause');
-      document.getElementById('RBConfigurationBtn').style.display = "block";
+      document.getElementById('RBConfigurationBtn').style.display = "inline";
       $("#RBMenu").slideDown();
     },
     function(){
@@ -52,14 +52,18 @@ function speedRead(){
       $(".SRinactive").addClass('unpause');
       document.getElementById('RBConfigurationBtn').style.display = "none";
       $("#RBMenu").slideUp();
+      $("#RBConfigurationBtn").css('right','-420px');
+      $("#RBConfigurationBtn").css('bottom','40px'); 
     });
 
  //   document.getElementById('RBConfigurationBtn').onclick = "showMenu()"
 
-    $('#RBConfigurationBtn').click(function(){
-      $("#RBMenu").slideDown();
-    });
-
+$("#RBConfigurationBtn").click(function(){
+  $("#RBMenu").slideDown("300",function(){$('#RBMenu').css('display','block');
+                                         });
+  $("#RBConfigurationBtn").css('right','30px');
+  $("#RBConfigurationBtn").css('bottom','40px');
+});
     //dynamically change WPM
     $('#wpmController').bind('input', function() { 
       speedValue = 60000/$(this).val(); // get the current value of the input field.
@@ -194,8 +198,6 @@ function speedRead1() {
           endOfWord +
         // end active word
         "</span>" +
-        //config button
-        "<span id=\"RBConfigurationBtn\">&#x2699;</span>" + 
       // end html wrap
       "</span>" ;
 
