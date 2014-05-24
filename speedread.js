@@ -29,7 +29,7 @@ function speedRead(){
 
   // setup ReadingBox divs
   document.body.insertBefore(insertHTML("<div id=\"RBWrap\"><div id=\"RBMain\"></div></div>"));
-  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBConfigurationBtn\">&#x2699;</span><span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span><span id=\"RBThemeWrap\"><span id=\"RBThemeLabel\">Theme: </span><span id=\"RBThemeTheme\"><button id=\"RBThemeWhiteThatchBtn\">White Thatch</button><button id=\"RBThemeSoftBlueBtn\">Soft Blue</button></span></span></span>"));
+  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBConfigurationBtn\">&#x2699;</span><span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span><span id=\"RBThemeWrap\"><span id=\"RBThemeLabel\">Theme: </span><span id=\"RBThemeTheme\"><button id=\"RBThemeWhiteThatchBtn\">White Thatch</button><button id=\"RBThemeSoftBlueBtn\">Soft Blue</button></span><span id=\"RBThemeHidden\">RBThemeSoftBlue<span></span></span>"));
 
 
 
@@ -66,10 +66,10 @@ $("#RBConfigurationBtn").click(function(){
       speedValue = 60000/$(this).val(); // get the current value of the input field.
   });
 $("#RBThemeWhiteThatchBtn").click(function(){
-  $("#SRinactive").removeClass("RBThemeSoftBlue").addClass("RBThemeWhiteThatch");
+  $("#RBThemeHidden").innerHTML = "RBThemeWhiteThatch";
 })
 $("#RBThemeSoftBlueBtn").click(function(){
-  $("#SRinactive").removeClass("RBThemeWhiteThatch").addClass("RBThemeSoftBlue");
+  $("#RBThemeHidden").innerHTML = "RBThemeSoftBlue";
 })
 
   //start readability alg--
@@ -169,6 +169,7 @@ function speedRead1() {
     var middleChar;
     var startOfWord;
     var endOfWord;
+    var theme = document.getElementById('RBThemeHidden').innerHTML;
 
     limit = words.length;
     var halflength = words[i].length/2;
@@ -186,7 +187,7 @@ function speedRead1() {
 
     var currentWord = 
       // start html wrap
-      "<span id=\"SRinactive\" class=\"RBThemeSoftBlueBtn unpause\">" +
+      "<span id=\"SRinactive\" class=\"" + theme + "unpause\">" +
         // start active word
         " <span class=\"SRwrap\">" +
           //  first half of active word
