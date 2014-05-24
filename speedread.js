@@ -74,8 +74,7 @@ function speedRead(){
  //   document.getElementById('RBConfigurationBtn').onclick = "showMenu()"
 
 $("#RBConfigurationBtn").click(function(){
-  $("#RBMenu").slideDown("300",function(){$('#RBMenu').toggle();
-                                         });
+  $("#RBMenu").toggle();
 });
     //dynamically change WPM
     $('#wpmController').bind('input', function() { 
