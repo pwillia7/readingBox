@@ -104,6 +104,11 @@
 .RBFontSizeExtraLarge{
 	font-size: 60px !important;
 }
+
+#RBFontSizeHidden{
+	display: none;
+}
+
 /*Main*/
 .SRactive{
 	color: red !important;
