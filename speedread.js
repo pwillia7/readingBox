@@ -40,10 +40,10 @@ function speedRead(){
     <span id=\"RBThemeWrap\">\
       <span id=\"RBThemeLabel\">Theme: </span>\
       <span id=\"RBThemeTheme\">\
-        <button id=\"RBThemeVanillaBtn\">Vanilla</button>\
-        <button id=\"RBThemeWhiteThatchBtn\">White Thatch</button>\
-        <button id=\"RBThemeSoftBlueBtn\">Soft Blue</button>\
-        <button id=\"RBThemeLoudOrangeBtn\">Loud Orange</button>\
+        <button class=\"RBThemeBtn\" id=\"RBThemeVanillaBtn\">Vanilla</button>\
+        <button class=\"RBThemeBtn\" id=\"RBThemeWhiteThatchBtn\">White Thatch</button>\
+        <button class=\"RBThemeBtn\" id=\"RBThemeSoftBlueBtn\">Soft Blue</button>\
+        <button class=\"RBThemeBtn\" id=\"RBThemeLoudOrangeBtn\">Loud Orange</button>\
       </span>\
       <span id=\"RBThemeHidden\">RBThemeVanilla</span>\
     </span>\
@@ -88,24 +88,28 @@ $("#RBConfigurationBtn").click(function(){
 // White Thatch
 $("#RBThemeWhiteThatchBtn").click(function(){
   $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeLoudOrange").addClass("RBThemeWhiteThatch");
+  $("#RBMenu").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeLoudOrange").addClass("RBThemeWhiteThatch");
   document.getElementById('RBThemeHidden').innerText = "RBThemeWhiteThatch";
 });
 
 // Soft Blue
 $("#RBThemeSoftBlueBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch RBThemeLoudOrange RBThemeVanilla").addClass("RBThemeSoftBlue");
+   $("#RBMenu").removeClass("RBThemeWhiteThatch RBThemeLoudOrange RBThemeVanilla").addClass("RBThemeSoftBlue");
    document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
 });
 
 // Vanilla
 $("#RBThemeVanillaBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch RBThemeSoftBlue RBThemeLoudOrange").addClass("RBThemeVanilla");
+   $("#RBMenu").removeClass("RBThemeWhiteThatch RBThemeSoftBlue RBThemeLoudOrange").addClass("RBThemeVanilla");
    document.getElementById('RBThemeHidden').innerText = "RBThemeVanilla";
 });
 
 // Loud Orange
 $("#RBThemeLoudOrangeBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeWhiteThatch").addClass("RBThemeLoudOrange");
+   $("#RBMenu").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeWhiteThatch").addClass("RBThemeLoudOrange");
    document.getElementById('RBThemeHidden').innerText = "RBThemeLoudOrange";
 });
 
