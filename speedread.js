@@ -260,7 +260,7 @@ function speedRead1() {
       // start html wrap
       "<span id=\"SRinactive\" class=\"" + theme + " unpause\">" +
         // start active word
-        " <span class=\"SRwrap\">" +
+        " <span class=\"" + fontSize + " SRwrap\">" +
           //  first half of active word
           startOfWord +
           // highlight middle letter
