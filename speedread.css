@@ -1,49 +1,71 @@
 /*Themes*/
+
 .RBThemeVanilla{
-background: rgba(255,255,255,1);
-background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+	background: rgba(255,255,255,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
 }
+
 .RBThemeWhiteThatch{
-background:
-linear-gradient(27deg, #FAFAFA 5px, transparent 5px) 0 5px,
-linear-gradient(207deg, #FAFAFA 5px, transparent 5px) 10px 0px,
-linear-gradient(27deg, #f2f2f2 5px, transparent 5px) 0px 10px,
-linear-gradient(207deg, #f2f2f2 5px, transparent 5px) 10px 5px,
-linear-gradient(90deg, #F8F8F8 10px, transparent 10px),
-linear-gradient(#f8f8f8 25%, #F8F8F8 25%, #F8F8F8 50%, transparent 50%, transparent 75%, #fbfbfb 75%, #fbfbfb);
-background-color: #ffffff;
-background-size: 16px 16px;
+	background:
+	linear-gradient(27deg, #FAFAFA 5px, transparent 5px) 0 5px,
+	linear-gradient(207deg, #FAFAFA 5px, transparent 5px) 10px 0px,
+	linear-gradient(27deg, #f2f2f2 5px, transparent 5px) 0px 10px,
+	linear-gradient(207deg, #f2f2f2 5px, transparent 5px) 10px 5px,
+	linear-gradient(90deg, #F8F8F8 10px, transparent 10px),
+	linear-gradient(#f8f8f8 25%, #F8F8F8 25%, #F8F8F8 50%, transparent 50%, transparent 75%, #fbfbfb 75%, #fbfbfb);
+	background-color: #ffffff;
+	background-size: 16px 16px;
 }
 
 .RBThemeSoftBlue{
-background: rgba(222,242,255,1);
-background: -moz-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, rgba(222,242,255,1)), color-stop(100%, rgba(134,174,204,1)));
-background: -webkit-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
-background: -o-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
-background: -ms-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
-background: radial-gradient(ellipse at center, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#def2ff', endColorstr='#86aecc', GradientType=1 );
+	background: rgba(222,242,255,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, rgba(222,242,255,1)), color-stop(100%, rgba(134,174,204,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(222,242,255,1) 0%, rgba(134,174,204,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#def2ff', endColorstr='#86aecc', GradientType=1 );
 }
+
 .RBThemeLoudOrange{
-background: rgba(241,231,103,1);
-background: -moz-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
-background: -webkit-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-background: -o-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-background: -ms-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-background: radial-gradient(ellipse at center, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
+	background: rgba(241,231,103,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, , color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=1 );
 }
+
 #RBThemeHidden{
 	display: none;
 }
+
+#RBThemeWrap{
+  margin: 5px;
+  float: left;
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#RBThemeLabel{
+	width: 10%;
+	float: left;
+	margin-top: 3px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 /*Main*/
 .SRactive{
 	color: red !important;
@@ -97,7 +119,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', end
 
 .wpmWrap{
   margin: 5px;
-	float: left;
+  float: left;
   width: 100%;
   height: 20px;
   font-size: 12px;
