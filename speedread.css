@@ -1,6 +1,6 @@
 /*Themes*/
 
-.RBThemeBtn{
+.RBMenuBtn{
 	background: inherit;
 	border: 1px gray solid;
 }
@@ -70,6 +70,23 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+/*Font Sizes*/
+
+.RBFontSizeSmall{
+	font-size: 30px;
+}
+
+.RBFontSizeMedium{
+	font-size: 40px;
+}
+
+.RBFontSizeLarge{
+	font-size: 50px;
+}
+
+.RBFontSizeExtraLarge{
+	font-size: 60px;
+}
 /*Main*/
 .SRactive{
 	color: red !important;

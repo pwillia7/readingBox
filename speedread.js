@@ -36,18 +36,28 @@ function speedRead(){
         <span class=\"wpmLabel\">WPM: </span>\
         <input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\">\
       </span>\
-    <span id=\"pausedRB\" style=\"display: none;\"></span>\
-    <span id=\"RBThemeWrap\">\
-      <span id=\"RBThemeLabel\">Theme: </span>\
-      <span id=\"RBThemeTheme\">\
-        <button class=\"RBThemeBtn\" id=\"RBThemeVanillaBtn\">Vanilla</button>\
-        <button class=\"RBThemeBtn\" id=\"RBThemeWhiteThatchBtn\">White Thatch</button>\
-        <button class=\"RBThemeBtn\" id=\"RBThemeSoftBlueBtn\">Soft Blue</button>\
-        <button class=\"RBThemeBtn\" id=\"RBThemeLoudOrangeBtn\">Loud Orange</button>\
+      <span id=\"pausedRB\" style=\"display: none;\"></span>\
+      <span id=\"RBThemeWrap\">\
+        <span id=\"RBThemeLabel\">Theme: </span>\
+        <span id=\"RBThemeTheme\">\
+          <button class=\"RBMenuBtn\" id=\"RBThemeVanillaBtn\">Vanilla</button>\
+          <button class=\"RBMenuBtn\" id=\"RBThemeWhiteThatchBtn\">White Thatch</button>\
+          <button class=\"RBMenuBtn\" id=\"RBThemeSoftBlueBtn\">Soft Blue</button>\
+          <button class=\"RBMenuBtn\" id=\"RBThemeLoudOrangeBtn\">Loud Orange</button>\
+        </span>\
+        <span id=\"RBThemeHidden\">RBThemeVanilla</span>\
       </span>\
-      <span id=\"RBThemeHidden\">RBThemeVanilla</span>\
-    </span>\
-  </span>"));
+      <span id=\"RBFontSizeWrap\">\
+        <span id=\"RBFontSizeLabel\">Font Size: </span>\
+        <span id=\"RBFontSizeBtns\">\
+          <button class=\"RBMenuBtn\" id=\"RBFontSizeSmall\">Small</button>\
+          <button class=\"RBMenuBtn\" id=\"RBFontSizeMedium\">Medium Thatch</button>\
+          <button class=\"RBMenuBtn\" id=\"RBFontSizeLarge\">Large</button>\
+          <button class=\"RBMenuBtn\" id=\"RBFontSizeExtraLarge\">Extra Large</button>\
+        </span>\
+        <span id=\"RBFontSizeHidden\">RBFontSmall</span>\
+      </span>\
+    </span>"));
 
 
 
@@ -88,14 +98,12 @@ $("#RBConfigurationBtn").click(function(){
 // White Thatch
 $("#RBThemeWhiteThatchBtn").click(function(){
   $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeLoudOrange").addClass("RBThemeWhiteThatch");
-  $("#RBMenu").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeLoudOrange").addClass("RBThemeWhiteThatch");
   document.getElementById('RBThemeHidden').innerText = "RBThemeWhiteThatch";
 });
 
 // Soft Blue
 $("#RBThemeSoftBlueBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch RBThemeLoudOrange RBThemeVanilla").addClass("RBThemeSoftBlue");
-   $("#RBMenu").removeClass("RBThemeWhiteThatch RBThemeLoudOrange RBThemeVanilla").addClass("RBThemeSoftBlue");
    document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
 });
 
@@ -109,8 +117,29 @@ $("#RBThemeVanillaBtn").click(function(){
 // Loud Orange
 $("#RBThemeLoudOrangeBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeWhiteThatch").addClass("RBThemeLoudOrange");
-   $("#RBMenu").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeWhiteThatch").addClass("RBThemeLoudOrange");
    document.getElementById('RBThemeHidden').innerText = "RBThemeLoudOrange";
+});
+
+
+// Font Size Controllers
+$("#RBFontSizeSmall").click(function(){
+  $(".SRwrap").removeClass("RBFontSizeMedium RBFontSizeLarge RBFontSizeExtraLarge").addClass("RBFontSizeSmall");
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeSmall";
+});
+
+$("#RBFontSizeMedium").click(function(){
+  $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeLarge RBFontSizeExtraLarge").addClass("RBFontSizeMedium");
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeMedium";
+});
+
+$("#RBFontSizeLarge").click(function(){
+  $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeMedium RBFontSizeExtraLarge").addClass("RBFontSizeLarge");
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeLarge";
+});
+
+$("#RBFontSizeExtraLarge").click(function(){
+  $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeMedium RBFontSizeLarge").addClass("RBFontSizeExtraLarge");
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeExtraLarge";
 });
 
   //start readability alg--
@@ -211,6 +240,7 @@ function speedRead1() {
     var startOfWord;
     var endOfWord;
     var theme = document.getElementById('RBThemeHidden').innerText;
+    var fontSize = document.getElementById('RBFontSizeHidden').innerText;
 
     limit = words.length;
     var halflength = words[i].length/2;
