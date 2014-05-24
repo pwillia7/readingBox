@@ -81,12 +81,13 @@ $("#RBConfigurationBtn").click(function(){
     $('#wpmController').bind('input', function() { 
       speedValue = 60000/$(this).val(); // get the current value of the input field.
   });
+
 $("#RBThemeWhiteThatchBtn").click(function(){
   document.getElementById('RBThemeHidden').innerText = "RBThemeWhiteThatch";
-})
+});
 $("#RBThemeSoftBlueBtn").click(function(){
    document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
-})
+});
 
   //start readability alg--
   function grabArticle() {
@@ -185,7 +186,7 @@ function speedRead1() {
     var middleChar;
     var startOfWord;
     var endOfWord;
-    var theme = document.getElementById('RBThemeHidden').innerHTML;
+    var theme = document.getElementById('RBThemeHidden').innerText;
 
     limit = words.length;
     var halflength = words[i].length/2;
