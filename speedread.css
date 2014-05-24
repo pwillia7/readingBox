@@ -22,6 +22,10 @@ background: -ms-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1
 background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
 }
+
+#RBThemeHidden{
+	display: none;
+}
 /*Main*/
 .SRactive{
 	color: red !important;

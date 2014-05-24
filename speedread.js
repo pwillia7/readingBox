@@ -82,10 +82,10 @@ $("#RBConfigurationBtn").click(function(){
       speedValue = 60000/$(this).val(); // get the current value of the input field.
   });
 $("#RBThemeWhiteThatchBtn").click(function(){
-  $("#RBThemeHidden").innerHTML = "RBThemeWhiteThatch";
+  document.getElementById('RBThemeHidden').innerText = "RBThemeWhiteThatch";
 })
 $("#RBThemeSoftBlueBtn").click(function(){
-  $("#RBThemeHidden").innerHTML = "RBThemeSoftBlue";
+   document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
 })
 
   //start readability alg--
