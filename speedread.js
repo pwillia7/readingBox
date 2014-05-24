@@ -10,7 +10,7 @@ function startReadingBox(){
   var speedValue=125;
   var pause = false;
   var readingBox;
-  var excludes = ['.',',','-','(',')','$','#','\'','"'];
+  var excludes = ['.',',','-','(',')','$','#','\'','"','’'];
 
 
 //html string helper function
@@ -74,7 +74,7 @@ function speedRead(){
  //   document.getElementById('RBConfigurationBtn').onclick = "showMenu()"
 
 $("#RBConfigurationBtn").click(function(){
-  $("#RBMenu").slideDown("300",function(){$('#RBMenu').css('display','block');
+  $("#RBMenu").slideDown("300",function(){$('#RBMenu').toggle();
                                          });
 });
     //dynamically change WPM
@@ -89,7 +89,6 @@ $("#RBThemeWhiteThatchBtn").click(function(){
 $("#RBThemeSoftBlueBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch").addClass("RBThemeSoftBlue");
    document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
-   document.getElementsByClassName('SRwrap')[0].style.color = "#FFF";
 });
 
   //start readability alg--
