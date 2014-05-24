@@ -12,7 +12,7 @@ background-color: #ffffff;
 background-size: 16px 16px;
 }
 
-.RBTemeSoftBlue{
+.RBThemeSoftBlue{
 	background: rgba(147,206,222,1);
 background: -moz-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
 background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
@@ -26,7 +26,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', end
 .SRactive{
 	color: red !important;
 }
-.SRinactive{
+#SRinactive{
 
 	border: 1px solid #a9a9a9;
 	border-radius: 5px;
