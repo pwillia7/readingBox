@@ -204,7 +204,7 @@ function speedRead1() {
 
     var currentWord = 
       // start html wrap
-      "<span id=\"SRinactive\" class=\"" + theme + "unpause\">" +
+      "<span id=\"SRinactive\" class=\"" + theme + " unpause\">" +
         // start active word
         " <span class=\"SRwrap\">" +
           //  first half of active word
