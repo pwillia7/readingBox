@@ -1,7 +1,6 @@
-.SRactive{
-	color: red !important;
-}
-.SRinactive{
+/*Themes*/
+
+.RBThemeWhiteThatch{
 background:
 linear-gradient(27deg, #FAFAFA 5px, transparent 5px) 0 5px,
 linear-gradient(207deg, #FAFAFA 5px, transparent 5px) 10px 0px,
@@ -11,6 +10,24 @@ linear-gradient(90deg, #F8F8F8 10px, transparent 10px),
 linear-gradient(#f8f8f8 25%, #F8F8F8 25%, #F8F8F8 50%, transparent 50%, transparent 75%, #fbfbfb 75%, #fbfbfb);
 background-color: #ffffff;
 background-size: 16px 16px;
+}
+
+.RBTemeSoftBlue{
+	background: rgba(147,206,222,1);
+background: -moz-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+}
+/*Main*/
+.SRactive{
+	color: red !important;
+}
+.SRinactive{
+
 	border: 1px solid #a9a9a9;
 	border-radius: 5px;
   position: relative;

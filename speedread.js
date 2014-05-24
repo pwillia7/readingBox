@@ -29,7 +29,9 @@ function speedRead(){
 
   // setup ReadingBox divs
   document.body.insertBefore(insertHTML("<div id=\"RBWrap\"><div id=\"RBMain\"></div></div>"));
-  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBConfigurationBtn\">&#x2699;</span><span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span></span>"));
+  document.getElementById('RBMain').insertBefore(insertHTML("<span id=\"RBConfigurationBtn\">&#x2699;</span><span id=\"RBMenu\"><span class=\"wpmWrap\"><span class=\"wpmLabel\">WPM: </span><input value=\""+60000/speedValue+"\"type=\"text\"class=\"wpm\" id=\"wpmController\"></span><span id=\"pausedRB\" style=\"display: none;\"></span><span id=\"RBThemeWrap\"><span id=\"RBThemeLabel\">Theme: </span><span id=\"RBThemeTheme\"><button id=\"RBThemeWhiteThatchBtn\">White Thatch</button><button id=\"RBThemeSoftBlueBtn\">Soft Blue</button></span></span></span>"));
+
+
 
 
   //make ReadingBox draggable
@@ -41,14 +43,14 @@ function speedRead(){
       document.getElementById('pausedRB').innerHTML = i;
       pause = true;
       clearTimeout(readingBox);
-      $(".SRinactive").removeClass('unpause');
+      $("#SRinactive").removeClass('unpause');
       document.getElementById('RBConfigurationBtn').style.display = "inline";
     },
     function(){
       pause = false;
       speedRead1();
       document.getElementById('pausedRB').innerHTML = "";
-      $(".SRinactive").addClass('unpause');
+      $("#SRinactive").addClass('unpause');
       document.getElementById('RBConfigurationBtn').style.display = "none";
       $("#RBMenu").slideUp();
     });
@@ -63,7 +65,12 @@ $("#RBConfigurationBtn").click(function(){
     $('#wpmController').bind('input', function() { 
       speedValue = 60000/$(this).val(); // get the current value of the input field.
   });
-
+$("#RBThemeWhiteThatchBtn").click(function(){
+  $("#SRinactive").removeClass("RBThemeSoftBlue").addClass("RBThemeWhiteThatch");
+})
+$("#RBThemeSoftBlueBtn").click(function(){
+  $("#SRinactive").removeClass("RBThemeWhiteThatch").addClass("RBThemeSoftBlue");
+})
 
   //start readability alg--
   function grabArticle() {
@@ -179,7 +186,7 @@ function speedRead1() {
 
     var currentWord = 
       // start html wrap
-      "<span class=\"SRinactive unpause\">" +
+      "<span id=\"SRinactive\" class=\"RBThemeSoftBlueBtn unpause\">" +
         // start active word
         " <span class=\"SRwrap\">" +
           //  first half of active word
@@ -202,7 +209,7 @@ function speedRead1() {
 
 
     // replace word
-    $('.SRinactive').remove();
+    $('#SRinactive').remove();
     document.getElementById('RBMain').insertBefore(insertHTML(currentWord),document.getElementById('RBConfigurationBtn'));
     // increment i
     i++;
