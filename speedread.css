@@ -72,6 +72,23 @@
 
 /*Font Sizes*/
 
+#RBFontSizeWrap{
+  margin: 5px;
+  float: left;
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#RBFontSizeLabel{
+	width: 10%;
+	float: left;
+	margin-top: 3px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 .RBFontSizeSmall{
 	font-size: 30px !important;
 }
