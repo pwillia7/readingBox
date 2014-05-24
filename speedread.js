@@ -83,10 +83,13 @@ $("#RBConfigurationBtn").click(function(){
   });
 
 $("#RBThemeWhiteThatchBtn").click(function(){
+  $("#SRinactive").removeClass("RBThemeSoftBlue").addClass("RBThemeWhiteThatch");
   document.getElementById('RBThemeHidden').innerText = "RBThemeWhiteThatch";
 });
 $("#RBThemeSoftBlueBtn").click(function(){
+   $("#SRinactive").removeClass("RBThemeWhiteThatch").addClass("RBThemeSoftBlue");
    document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
+   document.getElementsByClassName('SRwrap')[0].style.color = "#FFF";
 });
 
   //start readability alg--
