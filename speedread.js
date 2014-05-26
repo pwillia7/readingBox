@@ -28,7 +28,7 @@ function insertHTML(htmlStr) {
 function speedRead(){
 
   // setup ReadingBox divs
-  document.body.insertBefore(insertHTML("<div id=\"RBWrap\"><div id=\"RBMain\"></div></div>"));
+  document.body.insertBefore(insertHTML("<div id=\"RBWrap\"><div id=\"RBMain\"></div></div>"),null);
   document.getElementById('RBMain').insertBefore(insertHTML("\
     <span id=\"RBConfigurationBtn\">&#x2699;</span>\
     <span id=\"RBMenu\">\
@@ -57,7 +57,7 @@ function speedRead(){
         </span>\
         <span id=\"RBFontSizeHidden\">RBFontSmall</span>\
       </span>\
-    </span>"));
+    </span>"),null);
 
 
 
