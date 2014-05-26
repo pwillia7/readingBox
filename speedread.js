@@ -98,48 +98,48 @@ $("#RBConfigurationBtn").click(function(){
 // White Thatch
 $("#RBThemeWhiteThatchBtn").click(function(){
   $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeLoudOrange").addClass("RBThemeWhiteThatch");
-  document.getElementById('RBThemeHidden').innerText = "RBThemeWhiteThatch";
+  document.getElementById('RBThemeHidden').textContent = "RBThemeWhiteThatch";
 });
 
 // Soft Blue
 $("#RBThemeSoftBlueBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch RBThemeLoudOrange RBThemeVanilla").addClass("RBThemeSoftBlue");
-   document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
+   document.getElementById('RBThemeHidden').textContent = "RBThemeSoftBlue";
 });
 
 // Vanilla
 $("#RBThemeVanillaBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch RBThemeSoftBlue RBThemeLoudOrange").addClass("RBThemeVanilla");
    $("#RBMenu").removeClass("RBThemeWhiteThatch RBThemeSoftBlue RBThemeLoudOrange").addClass("RBThemeVanilla");
-   document.getElementById('RBThemeHidden').innerText = "RBThemeVanilla";
+   document.getElementById('RBThemeHidden').textContent = "RBThemeVanilla";
 });
 
 // Loud Orange
 $("#RBThemeLoudOrangeBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeWhiteThatch").addClass("RBThemeLoudOrange");
-   document.getElementById('RBThemeHidden').innerText = "RBThemeLoudOrange";
+   document.getElementById('RBThemeHidden').textContent = "RBThemeLoudOrange";
 });
 
 
 // Font Size Controllers
 $("#RBFontSizeSmall").click(function(){
   $(".SRwrap").removeClass("RBFontSizeMedium RBFontSizeLarge RBFontSizeExtraLarge").addClass("RBFontSizeSmall");
-  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeSmall";
+  document.getElementById('RBFontSizeHidden').textContent = "RBFontSizeSmall";
 });
 
 $("#RBFontSizeMedium").click(function(){
   $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeLarge RBFontSizeExtraLarge").addClass("RBFontSizeMedium");
-  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeMedium";
+  document.getElementById('RBFontSizeHidden').textContent = "RBFontSizeMedium";
 });
 
 $("#RBFontSizeLarge").click(function(){
   $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeMedium RBFontSizeExtraLarge").addClass("RBFontSizeLarge");
-  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeLarge";
+  document.getElementById('RBFontSizeHidden').textContent = "RBFontSizeLarge";
 });
 
 $("#RBFontSizeExtraLarge").click(function(){
   $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeMedium RBFontSizeLarge").addClass("RBFontSizeExtraLarge");
-  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeExtraLarge";
+  document.getElementById('RBFontSizeHidden').textContent = "RBFontSizeExtraLarge";
 });
 
   //start readability alg--
@@ -184,7 +184,7 @@ $("#RBFontSizeExtraLarge").click(function(){
       }
 
       // Add a point for the paragraph found
-      if(getInnerText(allParagraphs[j]).length > 10)
+      if(gettextContent(allParagraphs[j]).length > 10)
         parentNode.readability.contentScore++;
 
       // Add points for any commas within this paragraph
@@ -206,13 +206,13 @@ $("#RBFontSizeExtraLarge").click(function(){
 
     
     
-    return topDiv.innerText.split(/[\r\n ]/).filter(function(v){return v!==''});
+    return topDiv.textContent.split(/[\r\n ]/).filter(function(v){return v!==''});
   }
 
   // Get the inner text of a node - cross browser compatibly.
-  function getInnerText(e) {
+  function gettextContent(e) {
     if (navigator.appName == "Microsoft Internet Explorer")
-      return e.innerText;
+      return e.textContent;
     else
       return e.textContent;
   }
@@ -220,7 +220,7 @@ $("#RBFontSizeExtraLarge").click(function(){
   // Get character count
   function getCharCount ( e,s ) {
       s = s || ",";
-    return getInnerText(e).split(s).length;
+    return gettextContent(e).split(s).length;
   }
   // end readability code
 
@@ -239,8 +239,8 @@ function speedRead1() {
     var middleChar;
     var startOfWord;
     var endOfWord;
-    var theme = document.getElementById('RBThemeHidden').innerText;
-    var fontSize = document.getElementById('RBFontSizeHidden').innerText;
+    var theme = document.getElementById('RBThemeHidden').textContent;
+    var fontSize = document.getElementById('RBFontSizeHidden').textContent;
 
     limit = words.length;
     var halflength = words[i].length/2;
