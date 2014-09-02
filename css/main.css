@@ -1,0 +1,29 @@
+.logo{
+	background: no-repeat url('../img/readingBox.png');
+	width: 390px;
+	height: 88px;
+	display: inline-block;
+}
+.rblink{
+	border: #ccc 1px solid;
+	border-radius: 5px;
+	padding: 13px 38px;
+}
+.row{
+	padding: 10px;
+}
+span.bookmarklet{
+	color: #0099FF;
+	padding-left: 8px;
+}
+.container{
+	padding-top: 20px;
+}
+#tryIt{
+	position: relative;
+bottom: 37px;
+left: 42px;
+}
+.main{
+	max-width: 850px;
+}

@@ -1,8 +1,90 @@
-<html>
-	<head>
-		
-	</head>
-	<body>
-	<a href="javascript:(function(){var head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://www.ptkwilliams.com/readingBox/readingBox.js?' + Math.floor(Math.random()*99999);head.appendChild(script);})(); void 0">Reading Box</a>	
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReadingBox</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    
+  <div class="container">
+    <div class="row">
+
+      <div class="logo"></div>
+      <span class="ptkwilliams"></span>
+      <button id='tryIt' class="btn btn-success btn-lg">Try it out!</button>
+
+    </div>
+    <div class="main">
+      <h2>ATTENTION: This currently only works in <a href="https://www.google.com/chrome/browser/">Chrome</a></h2>
+      <div class="content">
+      <p>
+
+      ReadingBox is a tool to help you read text on the web faster. The inspiration for this project came from <a href="http://www.spritzinc.com/">Spritz</a>. 
+      </p>
+      
+      <p>
+        To use, drag the 'ReadingBox' link below to your bookmarks bar. Now navigate to any page on the internet and click the bookmark to start using Readingbox.
+      </p>
+
+      <p>
+      Thanks for checking this out. Please let me know if you have any feedback!
+      </p>
+      </div>
+    </div>
+<div class="row">
+  <button rel='sidebar' id='readingbox' type='button' class='btn btn-default btn-lg'><span style="color: #0099FF" class='glyphicon glyphicon-bookmark'></span> readingBox</button> <span class="bookmarklet">   If you are on a PC, click this button to save readingBox as a bookmarklet</span>
+	
+	
+ 	</div>
+<div class="row">
+	<a class='rblink' href="javascript:(function(){var head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://www.ptkwilliams.com/readingBox/readingBox.js?' + Math.floor(Math.random()*99999);head.appendChild(script);})(); void 0">readingBox</a>	
+	<span class="bookmarklet">   If you are on a Mac, drag this link to the bookmarks bar </span>
+
+</div>
+
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    $(function() {
+    	var x = "javascript:(function(){var head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://www.ptkwilliams.com/readingBox/readingBox.js?' + Math.floor(Math.random()*99999);head.appendChild(script);})(); void 0";
+    	$("#tryIt").click(function(){
+    		javascript:(function(){var head=document.getElementsByTagName('head')[0],script=document.createElement('script');script.type='text/javascript';script.src='http://www.ptkwilliams.com/readingBox/readingBox.js?' + Math.floor(Math.random()*99999);head.appendChild(script);})(); void 0
+    	});
+
+
+        $("#readingbox").click(function() {
+            // Mozilla Firefox Bookmark
+            if ('sidebar' in window && 'addPanel' in window.sidebar) { 
+                window.sidebar.addPanel(x,'readingBox',"");
+            } else if( /*@cc_on!@*/false) { // IE Favorite
+                window.external.AddFavorite(x,'readingBox'); 
+            } else { // webkit - safari/chrome
+                alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+            }
+        });
+    });
+
+
+</script>
+
+  </body>
 </html>
