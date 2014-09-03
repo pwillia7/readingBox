@@ -1,4 +1,6 @@
 function startReadingBox(){
+
+
  
   // 'global' vars
   var i=0;
@@ -58,20 +60,8 @@ function speedRead(){
     </span>"),null);
 
 
-//grab localStorage values if exist
-if(localStorage.WPM != undefined){
-  speedValue = localStorage.WPM;
-}
-if(localStorage.theme != undefined){
-  $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeLoudOrange RBThemeWhiteThatch");
-  $("#SRinactive").addClass(localStorage.theme);
-  $('#RBThemeHidden').text(localStorage.theme);
-}
-if(localStorage.fontSize != undefined){
-  $(".SRwrap").removeClass("RBFontSizeMedium RBFontSizeLarge RBFontSizeExtraLarge RBFontSizeSmall");
-  $(".SRwrap").addClass(localStorage.fontSize);
-  $('#RBFontSizeHidden').text(localStorage.fontSize);
-}
+
+
   //make ReadingBox draggable
   $( "#RBMain" ).draggable();
 
@@ -101,7 +91,6 @@ $("#RBConfigurationBtn").click(function(){
     //dynamically change WPM
     $('#wpmController').bind('input', function() { 
       speedValue = 60000/$(this).val(); // get the current value of the input field.
-      localStorage.setItem("WPM", speedValue);
   });
 
 // Theme Click Controllers
@@ -109,62 +98,48 @@ $("#RBConfigurationBtn").click(function(){
 // White Thatch
 $("#RBThemeWhiteThatchBtn").click(function(){
   $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeLoudOrange").addClass("RBThemeWhiteThatch");
-  $('#RBThemeHidden').text("RBThemeWhiteThatch");
-  localStorage.setItem('theme',"RBThemeWhiteThatch");
+  document.getElementById('RBThemeHidden').innerText = "RBThemeWhiteThatch";
 });
 
 // Soft Blue
 $("#RBThemeSoftBlueBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch RBThemeLoudOrange RBThemeVanilla").addClass("RBThemeSoftBlue");
-   $('#RBThemeHidden').text("RBThemeSoftBlue");
-   localStorage.setItem('theme',"RBThemeSoftBlue");
-
+   document.getElementById('RBThemeHidden').innerText = "RBThemeSoftBlue";
 });
 
 // Vanilla
 $("#RBThemeVanillaBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeWhiteThatch RBThemeSoftBlue RBThemeLoudOrange").addClass("RBThemeVanilla");
    $("#RBMenu").removeClass("RBThemeWhiteThatch RBThemeSoftBlue RBThemeLoudOrange").addClass("RBThemeVanilla");
-     $('#RBThemeHidden').text("RBThemeVanilla");
-       localStorage.setItem('theme',"RBThemeVanilla");
-
+   document.getElementById('RBThemeHidden').innerText = "RBThemeVanilla";
 });
 
 // Loud Orange
 $("#RBThemeLoudOrangeBtn").click(function(){
    $("#SRinactive").removeClass("RBThemeSoftBlue RBThemeVanilla RBThemeWhiteThatch").addClass("RBThemeLoudOrange");
-  $('#RBThemeHidden').text("RBThemeLoudOrange");
-    localStorage.setItem('theme',"RBThemeLoudOrange");
+   document.getElementById('RBThemeHidden').innerText = "RBThemeLoudOrange";
 });
 
 
 // Font Size Controllers
 $("#RBFontSizeSmall").click(function(){
   $(".SRwrap").removeClass("RBFontSizeMedium RBFontSizeLarge RBFontSizeExtraLarge").addClass("RBFontSizeSmall");
-    $('#RBFontSizeHidden').text("RBFontSizeSmall");
-      localStorage.setItem('fontSize',"RBFontSizeSmall");
-
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeSmall";
 });
 
 $("#RBFontSizeMedium").click(function(){
   $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeLarge RBFontSizeExtraLarge").addClass("RBFontSizeMedium");
-    $('#RBFontSizeHidden').text("RBFontSizeMedium");
-    localStorage.setItem('fontSize',"RBFontSizeMedium");
-
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeMedium";
 });
 
 $("#RBFontSizeLarge").click(function(){
   $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeMedium RBFontSizeExtraLarge").addClass("RBFontSizeLarge");
-    $('#RBFontSizeHidden').text("RBFontSizeLarge");
-    localStorage.setItem('fontSize',"RBFontSizeLarge");
-
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeLarge";
 });
 
 $("#RBFontSizeExtraLarge").click(function(){
   $(".SRwrap").removeClass("RBFontSizeSmall RBFontSizeMedium RBFontSizeLarge").addClass("RBFontSizeExtraLarge");
-    $('#RBFontSizeHidden').text("RBFontSizeExtraLarge");
-        localStorage.setItem('fontSize',"RBFontSizeExtraLarge");
-
+  document.getElementById('RBFontSizeHidden').innerText = "RBFontSizeExtraLarge";
 });
 
   //start readability alg--
@@ -229,8 +204,8 @@ $("#RBFontSizeExtraLarge").click(function(){
     
     
 
-   // console.log($(topDiv).text.split(/[\r\n ]/).filter(function(v){return v!==''}));
-   // return $(topDiv).text
+    
+    
     return topDiv.innerText.split(/[\r\n ]/).filter(function(v){return v!==''});
   }
 
